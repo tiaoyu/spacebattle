@@ -21,3 +21,38 @@ func DifficultyCost(mul float64) int {
 	}
 	return cost
 }
+
+// MaxAffordableDifficulty 根据可用功勋计算能支付的最大难度
+// 使用二分搜索找到最大的难度使得 DifficultyCost(difficulty) <= merits
+func MaxAffordableDifficulty(merits int) float64 {
+	cfg := config.DefaultConfig()
+	
+	// 如果功勋为 0 或负数，只能选择最低难度
+	if merits <= 0 {
+		return cfg.DifficultyMin
+	}
+	
+	// 二分搜索范围
+	minDiff := cfg.DifficultyMin
+	maxDiff := cfg.DifficultyMax
+	
+	// 如果最大难度都支付得起，直接返回
+	if DifficultyCost(maxDiff) <= merits {
+		return maxDiff
+	}
+	
+	// 二分搜索，精度 0.01
+	epsilon := 0.01
+	for maxDiff - minDiff > epsilon {
+		mid := (minDiff + maxDiff) / 2.0
+		cost := DifficultyCost(mid)
+		
+		if cost <= merits {
+			minDiff = mid
+		} else {
+			maxDiff = mid
+		}
+	}
+	
+	return minDiff
+}

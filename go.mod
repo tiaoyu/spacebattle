@@ -5,6 +5,7 @@ go 1.24.7
 require (
 	github.com/hajimehoshi/bitmapfont/v3 v3.2.0
 	github.com/hajimehoshi/ebiten/v2 v2.8.8
+	github.com/yohamta/donburi v1.4.4
 	golang.org/x/image v0.20.0
 	modernc.org/sqlite v1.39.0
 )

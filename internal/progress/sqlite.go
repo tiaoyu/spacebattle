@@ -60,6 +60,7 @@ type UpgradeData struct {
 	ModPenetration    int     `json:"penetration"`
 	ModSpreadDeltaDeg float64 `json:"spread_delta_deg"`
 	ModBulletSpeed    float64 `json:"bullet_speed"`
+	ModBulletDamage   int     `json:"bullet_damage"`
 	ModBurstChance    float64 `json:"burst_chance"`
 	ModEnableHoming   bool    `json:"enable_homing"`
 	ModTurnRateRad    float64 `json:"turn_rate_rad"`

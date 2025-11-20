@@ -28,6 +28,7 @@ type PlayerOptions struct {
 	ModPenetration    int     // 叠加到 PenetrationCount
 	ModSpreadDeltaDeg float64 // 负值缩小散射
 	ModBulletSpeed    float64
+	ModBulletDamage   int     // 叠加到子弹伤害
 	ModBurstChance    float64 // 0..1 范围叠加
 	ModEnableHoming   bool
 	ModTurnRateRad    float64

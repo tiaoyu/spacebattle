@@ -28,6 +28,7 @@ func NewUpgradeScene(opts battle.PlayerOptions) *UpgradeScene {
 		opts.ModFireRateHz = last.ModFireRateHz
 		opts.ModBulletsPerShot = last.ModBulletsPerShot
 		opts.ModPenetration = last.ModPenetration
+		opts.ModBulletDamage = last.ModBulletDamage
 		opts.ModSpreadDeltaDeg = last.ModSpreadDeltaDeg
 		opts.ModBulletSpeed = last.ModBulletSpeed
 		opts.ModBurstChance = last.ModBurstChance
@@ -87,6 +88,7 @@ func (u *UpgradeScene) Update() error {
 			ModPenetration:    u.opts.ModPenetration,
 			ModSpreadDeltaDeg: u.opts.ModSpreadDeltaDeg,
 			ModBulletSpeed:    u.opts.ModBulletSpeed,
+			ModBulletDamage:   u.opts.ModBulletDamage,
 			ModBurstChance:    u.opts.ModBurstChance,
 			ModEnableHoming:   u.opts.ModEnableHoming,
 			ModTurnRateRad:    u.opts.ModTurnRateRad,
